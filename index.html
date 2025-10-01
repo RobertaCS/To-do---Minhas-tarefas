@@ -1,26 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="styles.css">
-    <title>Green Productivity</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do - Produtividade</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="mainDiv">
-        <h1>Green Productivity</h1>
+  <header>
+    <h1>🌸 Minha To Do List</h1>
+    <p>“Você não precisa ver a escada inteira, apenas dê o primeiro passo.” — Martin Luther King✨</p>
+  </header>
 
-        <div class="center-image">
-            <img src="imagens/menu.png" alt="Center image">
-        </div>
+ <!-- Calendário -->
+<section class="calendar">
+  <h2>📅 Hoje</h2>
+  <div id="currentDate"></div>
+  <div id="currentTime"></div>
+</section>
 
-        <button id="start-btn">START</button>
+
+  <!-- Lista de tarefas -->
+  <section class="todo-container">
+    <h2>📝 Minhas Tarefas</h2>
+    <div class="input-area">
+      <input type="text" id="taskInput" placeholder="Digite sua tarefa...">
+      <button id="addTask">Adicionar</button>
     </div>
-    
-    <script>
-        const startBtn = document.getElementById("start-btn");
-        startBtn.addEventListener("click", () => {window.electronAPI.loadPage("dashboard.html");})
-    </script>
+    <ul id="taskList"></ul>
+  </section>
+
+  <!-- Progresso -->
+  <section class="progress">
+    <h2>📊 Progresso Diário</h2>
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill">0%</div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
